@@ -20,7 +20,7 @@ async function run() {
                 // Use a "parameterized query" to insert the data,
                 // Don't forget to "return" the client.query promise!
                 return client.query(`
-                    INSERT INTO sharks (name, dangerous, type, url, fatality)
+                    INSERT INTO sharkstable (name, dangerous, type, url, fatality)
                     VALUES ($1, $2, $3, $4, $5);
                 `,  
                 [shark.name, shark.dangerous, shark.type, shark.url, shark.fatality]);
