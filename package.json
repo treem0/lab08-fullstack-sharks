@@ -1,0 +1,28 @@
+{
+  "name": "lab08-fullstack-sharks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treem0/lab08-fullstack-sharks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treem0/lab08-fullstack-sharks/issues"
+  },
+  "homepage": "https://github.com/treem0/lab08-fullstack-sharks#readme"
+}
