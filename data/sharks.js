@@ -1,0 +1,58 @@
+module.exports = [
+    {
+        name: 'Bull Shark',
+        dangerous: '1',
+        type: 'bull',
+        url: 'assets/bull.jpg',
+        fatality: true,
+    },
+    {
+        name: 'Tiger Shark',
+        dangerous: '2',
+        type: 'tiger-shark',
+        url: 'assets/tiger-shark.jpeg',
+        fatality: true,
+    },
+    {
+        name: 'Great White Shark',
+        dangerous: '3',
+        type: 'great-white',
+        url: 'assets/great-white.jpg',
+        fatality: true,
+    },
+    {
+        name: 'Hammer Head Shark',
+        dangerous: '4',
+        type: 'hammer-head',
+        url: 'assets/hammer-head.jpg',
+        fatality: false,
+    },
+    {
+        name: 'Ragged Tooth Shark',
+        dangerous: '5',
+        type: 'ragged-tooth',
+        url: 'assets/ragged-tooth.jpg',
+        fatality: false,
+    },
+    {
+        name: 'Goblin Shark',
+        dangerous: '6',
+        type: 'goblin-shark',
+        url: 'assets/goblin-shark.jpg',
+        fatality: false,
+    },
+    {
+        name: 'Basking Shark',
+        dangerous: '7',
+        type: 'basking',
+        url: 'assets/basking.jpg',
+        fatality: false,
+    },
+    {
+        name: 'Whale Shark',
+        dangerous: '8',
+        type: 'whale-shark',
+        url: 'assets/whale-shark.jpg',
+        fatality: false,
+    },
+];

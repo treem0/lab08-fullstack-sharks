@@ -11,7 +11,7 @@ async function run() {
         await client.connect();
     
         await client.query(`
-
+            DROP TABLE IF EXISTS sharks;
         `);
 
         console.log('drop tables complete');
