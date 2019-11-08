@@ -13,19 +13,18 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.static('public'));
+app.use(express.json());
 
 app.get('/api/sharks', async(req, res) => {
     
     try {
         const result = await client.query(`
         SELECT
-            id,
-            name,
-            dangerous,
-            type,
-            url,
-            fatality
-        FROM sharkstable;
+            s.*,
+            d.dangerous as dangerLevel
+            FROM sharks s
+            JOIN dangerLevel d
+            ON s.dangerlevel_id = d.id
         `); 
         res.json(result.rows);           
     }
@@ -33,6 +32,25 @@ app.get('/api/sharks', async(req, res) => {
         console.log(err);
         res.status(500).json({
             error: err.message || err
+        });
+    }
+});
+
+
+app.get('/api/dangerlevel', async(req, res) => {
+    try {
+        const result = await client.query(`
+        SELECT *
+        FROM dangerLevel
+        ORDER BY dangerous;
+        `);
+
+        res.json(result.rows);
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err 
         });
     }
 });

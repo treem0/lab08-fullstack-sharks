@@ -19,13 +19,18 @@ async function run() {
     
         // run a query to create tables
         await client.query(`
+            CREATE TABLE dangerLevel (
+                id SERIAL PRIMARY KEY NOT NULL,
+                dangerous VARCHAR(256) NOT NULL
+            );
+
             CREATE TABLE sharkstable (
                 id SERIAL PRIMARY KEY NOT NULL,
                 name VARCHAR(256) NOT NULL,
-                dangerous INTEGER NOT NULL,
+                dangerLevel_id INTEGER NOT NULL REFERENCES dangerLevel(id),
                 type VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,
-                fatality BOOLEAN NOT NULL
+                killer BOOLEAN NOT NULL
             );
         `);
 

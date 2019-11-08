@@ -12,8 +12,8 @@ class SharkItem extends Component {
                 <img src="${shark.url}" alt="${shark.name} image">
             </div>
             <div class="info-container">
-            <p class="fatality">${shark.fatality}</p>
-            <p class="dangerous">${shark.dangerous}</p>
+            <p class="fatality">${shark.killer}</p>
+            <p class="dangerous">${shark.dangerLevel}</p>
             </div>
         </li>
     `;
