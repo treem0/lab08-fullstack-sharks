@@ -24,7 +24,7 @@ export async function addShark(shark) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(shark);
+        body: JSON.stringify(shark),
     });
 
     const data = await response.json();
