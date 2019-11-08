@@ -6,7 +6,6 @@ import { getSharks } from '../services/shark-api.js';
 class SharkListApp extends Component {
 
     onRender(dom) {
-        console.log('IM HERE');
         const header = new Header({ title: 'List of Sharks' });
         dom.prepend(header.renderDOM());
 

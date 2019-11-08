@@ -29,7 +29,6 @@ app.get('/api/sharks', async(req, res) => {
         res.json(result.rows);           
     }
     catch (err) {
-        console.log(err);
         res.status(500).json({
             error: err.message || err
         });
