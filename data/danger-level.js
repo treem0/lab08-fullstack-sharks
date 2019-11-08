@@ -1,5 +1,5 @@
 module.exports = [
-    'High',
-    'Low',
-    'None'
+    1,
+    2,
+    3
 ];

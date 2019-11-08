@@ -21,7 +21,7 @@ async function run() {
         await client.query(`
             CREATE TABLE dangerLevel (
                 id SERIAL PRIMARY KEY NOT NULL,
-                dangerous VARCHAR(256) NOT NULL
+                dangerous INTEGER NOT NULL
             );
 
             CREATE TABLE sharkstable (

@@ -1,5 +1,7 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
+import SharkForm from '../shark-form/SharkForm.js';
+import { getDangerLevel } from '../services/shark-api.js';
 
 class SharkFormApp extends Component {
 
