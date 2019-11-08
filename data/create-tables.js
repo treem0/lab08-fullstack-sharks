@@ -25,7 +25,7 @@ async function run() {
                 dangerous INTEGER NOT NULL,
                 type VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,
-                fatality BOOLEAN NOT NULL,
+                fatality BOOLEAN NOT NULL
             );
         `);
 
