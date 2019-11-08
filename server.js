@@ -25,7 +25,7 @@ app.get('/api/sharks', async(req, res) => {
             type,
             url,
             fatality
-        FROM SHARKS;
+        FROM sharkstable;
         `); 
         res.json(result.rows);           
     }
