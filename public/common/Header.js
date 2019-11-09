@@ -11,7 +11,7 @@ class Header extends Component {
         <nav>
             <a href="../">Home</a>
             <a href="../shark-list.html">SHARKS</a>
-            <a href="../home/index.html">ABOUT SHARKS</a>
+            <a href="../shark-form.html">Create a SHARK</a>
         </nav>
         </section>
         `; 
