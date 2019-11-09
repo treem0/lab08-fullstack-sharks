@@ -4,11 +4,11 @@ import { addShark } from '../services/shark-api.js';
 class SharkForm extends Component {
 
     onRender(form) {
-        const dangerRange = form.querySelector('1234');
-        const dangerDisplay = form.querySelector('12345');
-        const syncDanger = () => dangerDisplay.textContent = dangerRange.value;
-        dangerRange.addEventListener('input', syncDanger);
-        syncDanger(); 
+        // const dangerRange = form.querySelector('1234');
+        // const dangerDisplay = form.querySelector('12345');
+        // const syncDanger = () => dangerDisplay.textContent = dangerRange.value;
+        // dangerRange.addEventListener('input', syncDanger);
+        // syncDanger(); 
         
         form.addEventListener('submit', async event => {
             event.preventDefault();
