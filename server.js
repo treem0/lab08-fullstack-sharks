@@ -22,7 +22,7 @@ app.get('/api/sharks', async(req, res) => {
         SELECT
             s.*,
             d.dangerous as dangerLevel
-            FROM sharks s
+            FROM sharkstable s
             JOIN dangerLevel d
             ON s.dangerlevel_id = d.id
         `); 
