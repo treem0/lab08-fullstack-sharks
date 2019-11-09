@@ -5,16 +5,21 @@ import { getDangerLevel } from '../services/shark-api.js';
 
 class SharkFormApp extends Component {
 
-    onRender(dom) {
+    async onRender(dom) {
         const header = new Header({ title: 'Add a Shark' });
         dom.prepend(header.renderDOM());
+
+        const main = dom.querySelector('main');
+
+        const danger = await getDangerLevel();
+        const sharkForm = new SharkForm({ danger });
+        main.appendChild(sharkForm.renderDOM());
     }
 
     renderHTML() {
         return /*html*/`
             <div>
                 <main>
-                    <p>Shark Form Page</p>
                 </main>
             </div>
         `;
