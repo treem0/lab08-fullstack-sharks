@@ -24,6 +24,7 @@ class SharkForm extends Component {
 
             try {
                 const saved = await addShark(shark);
+                console.log(saved);
 
                 window.location = 'shark-list.html';
             }
@@ -34,7 +35,7 @@ class SharkForm extends Component {
         });
     }
     renderHTML() {
-        const dangerLevel = this.props.dangerLevel; //CHECK ON THIS
+        const dangerLevel = this.props.dangerlevel; //CHECK ON THIS
         const optionsList = dangerLevel.map(danger => {
             return `<option value="${danger.id}">${danger.dangerous}</option>`;
         });
