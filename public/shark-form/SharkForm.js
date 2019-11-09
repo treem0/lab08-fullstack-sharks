@@ -35,7 +35,7 @@ class SharkForm extends Component {
         });
     }
     renderHTML() {
-        const dangerLevel = this.props.dangerous; //CHECK ON THIS
+        const dangerLevel = this.props.danger; //CHECK ON THIS
         console.log(dangerLevel, 'XXXXXXXXXXX'); 
         const optionsList = dangerLevel.map(danger => {
             return `<option value="${danger.id}">${danger.dangerous}</option>`;
