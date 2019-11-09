@@ -13,7 +13,7 @@ class SharkItem extends Component {
             </div>
             <div class="info-container">
             <p class="fatality">Is the Shark a Killer?${shark.killer}</p>
-            <p class="dangerous">${shark.dangerLevel.dangerous}</p>
+            <p class="dangerous">${shark.dangerLevel}</p>
             </div>
         </li>
     `;
