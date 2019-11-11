@@ -13,7 +13,9 @@ class App extends Component {
             <div>
                 <!-- header goes here -->
                 <main>
-                    <p>Main App Page</p>
+                    <a href="shark-list.html">
+                    <img class="jaws-image" src="./assets/jaws.jpg">
+                    </a>
                 </main>
             </div>
         `;
