@@ -35,6 +35,27 @@ app.get('/api/sharks', async(req, res) => {
     }
 });
 
+app.post('api/sharks', async(req, res) => {
+    const shark = req.body;
+
+    try {
+        const result = await client.query(`
+        INSERT INTO sharkstable (name, dangerLevel_id, type, url, killer)
+        VALUES ($1, $2, $3, $4, $5)
+        RETURNING *:
+        `,
+        [shark.name, shark.dangerous, shark.type, shark.url, shark.killer]
+        );
+        res.json(result.rows[0]);
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
 
 app.get('/api/dangerlevel', async(req, res) => {
     try {
