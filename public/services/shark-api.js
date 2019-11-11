@@ -8,6 +8,14 @@ export async function getSharks() {
     return data;
 }
 
+export async function getShark(id) {
+    const url = `${URL}/sharks/${id}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+
 export async function getDangerLevel() {
     const url = `${URL}/dangerlevel`;
 

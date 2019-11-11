@@ -5,6 +5,7 @@ class SharkItem extends Component {
         const shark = this.props.shark;
         return /*html*/`
         <li class="shark-item">
+            <a href="shark-detail.html?id=${shark.id}">
             <div class="name-container">
                 <h2>${shark.name}</h2>
             </div>
@@ -15,6 +16,7 @@ class SharkItem extends Component {
             <p class="fatality">Is the Shark a Killer? ${ shark.killer}</p>
             <p class="dangerous">${shark.dangerlevel}</p>
             </div>
+            </a>
         </li>
     `;
     }

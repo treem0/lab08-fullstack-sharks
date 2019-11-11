@@ -3,7 +3,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
-
 const Client = pg.Client;
 const client = new Client(process.env.DATABASE_URL);
 client.connect();
@@ -35,9 +34,41 @@ app.get('/api/sharks', async(req, res) => {
     }
 });
 
+app.get('/api/sharks/:id', async(req, res) => {
+    const id = req.params.id;
+
+    try {
+        const result = await client.query(`
+        SELECT
+            s.*,
+            d.dangerous as dangerLevel
+        FROM sharkstable s
+        JOIN dangerLevel d
+        ON s.dangerlevel_id = d.id
+        WHERE s.id = $1
+    `,
+        [id]);
+
+        const shark = result.rows[0];
+        if (!shark) {
+            res.status(404).json({
+                error: `Shark id ${id} does not exist`
+            });
+        }
+        else {
+            res.json(result.rows[0]);
+        }
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            error: err.message || err
+        });
+    }
+});
+
 app.post('/api/sharks', async(req, res) => {
     const shark = req.body;
-    console.log(shark, 'XXXXXX');
     try {
         const result = await client.query(`
         INSERT INTO sharkstable (name, dangerLevel_id, url, killer)
