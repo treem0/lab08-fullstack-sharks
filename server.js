@@ -35,16 +35,16 @@ app.get('/api/sharks', async(req, res) => {
     }
 });
 
-app.post('api/sharks', async(req, res) => {
+app.post('/api/sharks', async(req, res) => {
     const shark = req.body;
     console.log(shark, 'XXXXXX');
     try {
         const result = await client.query(`
         INSERT INTO sharkstable (name, dangerLevel_id, url, killer)
-        VALUES ($1, $2, $3, $4, $5)
-        RETURNING *:
+        VALUES ($1, $2, $3, $4)
+        RETURNING *;
         `,
-        [shark.name, shark.dangerous, shark.url, shark.killer]
+        [shark.name, shark.dangerLevel, shark.url, shark.killer]
         );
         res.json(result.rows[0]);
     }
