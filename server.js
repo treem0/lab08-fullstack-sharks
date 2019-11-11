@@ -37,7 +37,7 @@ app.get('/api/sharks', async(req, res) => {
 
 app.post('api/sharks', async(req, res) => {
     const shark = req.body;
-
+    console.log(shark, 'XXXXXX');
     try {
         const result = await client.query(`
         INSERT INTO sharkstable (name, dangerLevel_id, type, url, killer)
