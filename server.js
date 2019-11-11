@@ -40,11 +40,11 @@ app.post('api/sharks', async(req, res) => {
     console.log(shark, 'XXXXXX');
     try {
         const result = await client.query(`
-        INSERT INTO sharkstable (name, dangerLevel_id, type, url, killer)
+        INSERT INTO sharkstable (name, dangerLevel_id, url, killer)
         VALUES ($1, $2, $3, $4, $5)
         RETURNING *:
         `,
-        [shark.name, shark.dangerlevel_Id, shark.type, shark.url, shark.killer]
+        [shark.name, shark.dangerlevel_Id, shark.url, shark.killer]
         );
         res.json(result.rows[0]);
     }
