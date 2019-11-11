@@ -44,7 +44,7 @@ app.post('api/sharks', async(req, res) => {
         VALUES ($1, $2, $3, $4, $5)
         RETURNING *:
         `,
-        [shark.name, shark.dangerlevel, shark.url, shark.killer]
+        [shark.name, shark.dangerous, shark.url, shark.killer]
         );
         res.json(result.rows[0]);
     }
