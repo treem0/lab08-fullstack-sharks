@@ -2,3 +2,6 @@ main {
     padding: 50px;
     text-align: center;
 }
+body {
+    margin: auto;
+}
