@@ -28,7 +28,6 @@ async function run() {
                 id SERIAL PRIMARY KEY NOT NULL,
                 name VARCHAR(256) NOT NULL,
                 dangerLevel_id INTEGER NOT NULL REFERENCES dangerLevel(id),
-                type VARCHAR(256) NOT NULL,
                 url VARCHAR(256) NOT NULL,
                 killer BOOLEAN NOT NULL
             );
