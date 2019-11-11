@@ -1,6 +1,6 @@
 import Component from '../Component.js';
 import Header from '../common/Header.js';
-import Loading from '../common/loading.js';
+import Loading from '../common/Loading.js';
 import SharkDetail from './SharkDetail.js';
 import { getShark } from '../services/shark-api.js';
 
